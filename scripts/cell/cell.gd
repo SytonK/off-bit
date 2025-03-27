@@ -1,5 +1,7 @@
 class_name Cell extends Node2D
 
+const SIZE: float = 512
+
 signal cell_pressed(index: Vector2i)
 
 @onready var label: Label = $Label
