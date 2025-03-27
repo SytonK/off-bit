@@ -12,6 +12,7 @@ func _ready() -> void:
 	Cell.modulo = modulo
 	
 	_init_grid()
+	_generate_pattern()
 
 
 func _init_grid() -> void:
@@ -45,3 +46,10 @@ func _on_cell_pressed(index: Vector2i) -> void:
 		_cells[index.x][index.y - 1].value -= 1
 	if index.y < height - 1:
 		_cells[index.x][index.y + 1].value -= 1
+
+func _generate_pattern() -> void:
+	for x in width:
+		for y in height:
+			var rand_amount_of_presses: int = randi_range(0, modulo -1)
+			for i in rand_amount_of_presses:
+				_on_cell_pressed(Vector2i(x,y))
