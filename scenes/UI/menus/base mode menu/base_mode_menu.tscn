@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dl15kh0veqeuc"]
+[gd_scene load_steps=2 format=3 uid="uid://dl15kh0veqeuc"]
+
+[ext_resource type="Script" uid="uid://cl6xvv8c4eg7k" path="res://scripts/UI/menus/base mode menu/base_mode_menu.gd" id="1_yk48m"]
 
 [node name="BaseModeMenu" type="VBoxContainer"]
 anchors_preset = 8
@@ -13,6 +15,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+script = ExtResource("1_yk48m")
 
 [node name="ToturialButton" type="Button" parent="."]
 layout_mode = 2
@@ -25,3 +28,6 @@ text = "3x3"
 [node name="5x5Button" type="Button" parent="."]
 layout_mode = 2
 text = "5x5"
+
+[connection signal="pressed" from="3x3Button" to="." method="_on_x_3_button_pressed"]
+[connection signal="pressed" from="5x5Button" to="." method="_on_x_5_button_pressed"]

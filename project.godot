@@ -15,6 +15,10 @@ run/main_scene="uid://dspvwnb0tiyjg"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+grid_metadata="*res://scripts/globals/gird_metadata.gd"
+
 [display]
 
 window/size/viewport_width=540
