@@ -10,7 +10,7 @@ var index: Vector2i;
 var value: int = 0: set = set_value;
 
 
-func set_value(new_value: int):
+func set_value(new_value: int) -> void:
 	value = posmod(new_value, modulo)
 	label.text = str(value)
 
