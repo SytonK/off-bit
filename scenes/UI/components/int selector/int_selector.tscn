@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://yp5jb0ky331u"]
+
+[ext_resource type="Script" uid="uid://cf0aqcy3npt6s" path="res://scripts/UI/components/IntSelector/int_selector.gd" id="1_uqqtf"]
+
+[node name="IntSelector" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_uqqtf")
+
+[node name="ReduceButton" type="Button" parent="."]
+layout_mode = 2
+text = "V"
+
+[node name="IntInput" type="LineEdit" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="IncreaseButton" type="Button" parent="."]
+layout_mode = 2
+text = "^"
+
+[connection signal="pressed" from="ReduceButton" to="." method="_on_reduce_button_pressed"]
+[connection signal="text_changed" from="IntInput" to="." method="_on_int_input_text_changed"]
+[connection signal="pressed" from="IncreaseButton" to="." method="_on_increase_button_pressed"]
