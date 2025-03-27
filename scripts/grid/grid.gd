@@ -13,11 +13,6 @@ func _ready() -> void:
 	
 	_init_grid()
 
-func _init_cells() -> void:
-	_cells.resize(width)
-	for x in width:
-		_cells[x].resize(height)
-
 
 func _init_grid() -> void:
 	_cells.resize(width)
