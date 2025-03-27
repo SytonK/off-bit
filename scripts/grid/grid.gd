@@ -56,6 +56,8 @@ func _generate_pattern() -> void:
 			var rand_amount_of_presses: int = randi_range(0, modulo -1)
 			for i in rand_amount_of_presses:
 				_on_cell_pressed(Vector2i(x,y))
+	if num_of_on_bits == 0:
+		_generate_pattern()
 
 
 func _cycle(index: Vector2i) -> void:
