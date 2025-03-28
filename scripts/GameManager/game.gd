@@ -4,11 +4,13 @@ const CENTER_OF_SCREEN: Vector2 = Vector2(270, 480)
 const GRID_CONTAIN_SIZE: Vector2 = Vector2(540 * 0.8, 960 * 0.8)
 
 @onready var win_menu: CanvasLayer = $WinMenu
+@onready var undo: Undo = $CanvasLayer/Undo
 
 var grid: Grid
 
 func _ready() -> void:
 	_init_grid()
+	undo.grid = grid
 
 func _init_grid() -> void:
 	grid = Grid.new()

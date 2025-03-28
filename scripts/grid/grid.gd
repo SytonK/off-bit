@@ -3,6 +3,7 @@ class_name Grid extends Node2D
 const CELL = preload("res://scenes/cell/cell.tscn")
 
 signal win
+signal pressed(index: Vector2i)
 
 @export var height: int = 3
 @export var width: int = 3
@@ -38,17 +39,21 @@ func _init_grid() -> void:
 			_cells[x][y] = new_cell
 
 func _on_cell_pressed(index: Vector2i) -> void:
+	cycle_cells(index)
+	pressed.emit(index)
+
+func cycle_cells(index: Vector2i, is_undo: bool = false) -> void:
 	assert(index.x >= 0 && index.x < width && index.y >= 0 && index.y < height)
 	
-	_cycle(index)
+	_cycle_cell(index, is_undo)
 	if index.x > 0:
-		_cycle(index + Vector2i(-1,0))
+		_cycle_cell(index + Vector2i(-1,0), is_undo)
 	if index.x < width - 1:
-		_cycle(index + Vector2i(1,0))
+		_cycle_cell(index + Vector2i(1,0), is_undo)
 	if index.y > 0:
-		_cycle(index + Vector2i(0,-1))
+		_cycle_cell(index + Vector2i(0,-1), is_undo)
 	if index.y < height - 1:
-		_cycle(index + Vector2i(0,1))
+		_cycle_cell(index + Vector2i(0,1), is_undo)
 	
 	_check_win()
 
@@ -62,15 +67,16 @@ func _generate_pattern() -> void:
 		_generate_pattern()
 
 
-func _cycle(index: Vector2i) -> void:
+func _cycle_cell(index: Vector2i, is_undo: bool = false) -> void:
 	assert(index.x >= 0 && index.x < width && index.y >= 0 && index.y < height)
 	
+	var val_to_add: int = -1 if !is_undo else 1
 	var old_val = _cells[index.x][index.y].value
 	
 	if old_val == 0:
 		num_of_on_bits += 1
 	
-	_cells[index.x][index.y].value -= 1
+	_cells[index.x][index.y].value += val_to_add
 	
 	if _cells[index.x][index.y].value == 0:
 		num_of_on_bits -= 1

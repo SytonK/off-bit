@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://7a5agccxrnmc"]
+
+[ext_resource type="Script" uid="uid://qdrw30pmdtd0" path="res://scripts/UI/menus/undo/undo.gd" id="1_bafuy"]
+
+[node name="Undo" type="Button"]
+offset_right = 49.0
+offset_bottom = 31.0
+text = "undo"
+script = ExtResource("1_bafuy")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
