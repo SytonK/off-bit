@@ -9,7 +9,7 @@ signal win
 @export var modulo: int = 2
 
 var _cells: Array[Array] #Array[Array[Cell]]
-var num_of_on_bits: int = 0: set = _set_num_of_on_bits
+var num_of_on_bits: int = 0
 
 func _ready() -> void: 
 	Cell.modulo = modulo
@@ -49,6 +49,8 @@ func _on_cell_pressed(index: Vector2i) -> void:
 		_cycle(index + Vector2i(0,-1))
 	if index.y < height - 1:
 		_cycle(index + Vector2i(0,1))
+	
+	_check_win()
 
 func _generate_pattern() -> void:
 	for x in width:
@@ -73,7 +75,8 @@ func _cycle(index: Vector2i) -> void:
 	if _cells[index.x][index.y].value == 0:
 		num_of_on_bits -= 1
 
-func _set_num_of_on_bits(new_val: int) -> void:
-	num_of_on_bits = new_val
+
+
+func _check_win() -> void:
 	if num_of_on_bits == 0:
 		win.emit()
