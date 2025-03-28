@@ -3,6 +3,8 @@ extends Node2D
 const CENTER_OF_SCREEN: Vector2 = Vector2(270, 480)
 const GRID_CONTAIN_SIZE: Vector2 = Vector2(540 * 0.8, 960 * 0.8)
 
+@onready var win_menu: CanvasLayer = $WinMenu
+
 var grid: Grid
 
 func _ready() -> void:
@@ -19,4 +21,4 @@ func _init_grid() -> void:
 	add_child(grid)
 
 func _on_win() -> void:
-	print('Win!')
+	win_menu.visible = true
