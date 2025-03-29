@@ -6,5 +6,3 @@
 offset_right = 44.0
 offset_bottom = 24.0
 script = ExtResource("1_q8gel")
-
-[connection signal="pressed" from="." to="." method="_on_pressed"]
