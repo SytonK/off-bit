@@ -5,12 +5,16 @@ const GRID_CONTAIN_SIZE: Vector2 = Vector2(540 * 0.8, 960 * 0.8)
 
 @onready var win_menu: CanvasLayer = $WinMenu
 @onready var undo: Undo = $CanvasLayer/Undo
+@onready var hint: Hint = $CanvasLayer/Hint
 
 var grid: Grid
 
 func _ready() -> void:
 	_init_grid()
 	undo.grid = grid
+	hint.grid = grid
+	
+	grid.generate_pattern()
 
 func _init_grid() -> void:
 	grid = Grid.new()
