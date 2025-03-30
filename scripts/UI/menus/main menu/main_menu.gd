@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var back_button: Button = $BackButton
+@onready var back_button: TextureButton = $BackButton
 @onready var mode_selector: VBoxContainer = $MenuSwapper/ModeSelector
 @onready var base_mode_menu: VBoxContainer = $MenuSwapper/BaseModeMenu
 @onready var advanced_mode_menu: Control = $MenuSwapper/AdvancedModeMenu
