@@ -10,7 +10,7 @@ signal cycle(index: Vector2i, is_undo: bool)
 @export var width: int = 3
 @export var modulo: int = 2
 
-var _cells: Array[Array] #Array[Array[Cell]]
+var cells: Array[Array] #Array[Array[Cell]]
 var num_of_on_bits: int = 0
 
 func _ready() -> void: 
@@ -20,10 +20,10 @@ func _ready() -> void:
 
 
 func _init_grid() -> void:
-	_cells.resize(width)
+	cells.resize(width)
 	
 	for x in width:
-		_cells[x].resize(height)
+		cells[x].resize(height)
 		
 		var x_position: float = float(-width + 1) / 2 + x
 		
@@ -36,7 +36,7 @@ func _init_grid() -> void:
 			new_cell.cell_pressed.connect(_on_cell_pressed)
 			add_child(new_cell)
 			
-			_cells[x][y] = new_cell
+			cells[x][y] = new_cell
 
 func _on_cell_pressed(index: Vector2i) -> void:
 	cycle_cells(index)
@@ -73,14 +73,14 @@ func _cycle_cell(index: Vector2i, is_undo: bool = false) -> void:
 	assert(index.x >= 0 && index.x < width && index.y >= 0 && index.y < height)
 	
 	var val_to_add: int = -1 if !is_undo else 1
-	var old_val = _cells[index.x][index.y].value
+	var old_val = cells[index.x][index.y].value
 	
 	if old_val == 0:
 		num_of_on_bits += 1
 	
-	_cells[index.x][index.y].value += val_to_add
+	cells[index.x][index.y].value += val_to_add
 	
-	if _cells[index.x][index.y].value == 0:
+	if cells[index.x][index.y].value == 0:
 		num_of_on_bits -= 1
 
 
