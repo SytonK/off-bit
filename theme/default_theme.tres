@@ -1,6 +1,6 @@
 [gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dqhxmrq0qx5k3"]
 
-[ext_resource type="FontFile" uid="uid://b5kety8slo7j3" path="res://assets/font/quantum.ttf" id="1_ag65a"]
+[ext_resource type="FontFile" uid="uid://diml0p4m540dj" path="res://assets/font/Martius.ttf" id="1_ag65a"]
 
 [resource]
 base_font = ExtResource("1_ag65a")
