@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c34b4psq5br4g"]
+[gd_scene load_steps=8 format=3 uid="uid://c34b4psq5br4g"]
 
 [ext_resource type="Script" uid="uid://bduq2gvjwcmfs" path="res://scripts/GameManager/game.gd" id="1_sul5r"]
 [ext_resource type="Texture2D" uid="uid://k2nbjj6wb5x0" path="res://assets/backgrounds/game background.jpg" id="2_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://bdmbbe0nwcofr" path="res://scenes/UI/menus/win menu/win_menu.tscn" id="2_7h61r"]
 [ext_resource type="PackedScene" uid="uid://7a5agccxrnmc" path="res://scenes/UI/undo/undo.tscn" id="3_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://d3hmeoeneou1r" path="res://scenes/UI/hint/hint.tscn" id="3_kelw5"]
+[ext_resource type="Texture2D" uid="uid://b78keiyqygu62" path="res://assets/icons/x-icon.png" id="5_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://bdn7ldgjmcwyi" path="res://scenes/UI/menus/quit menu/quit_menu.tscn" id="5_lfrn8"]
 
 [node name="Game" type="Node2D"]
@@ -18,27 +19,30 @@ texture = ExtResource("2_5i0tg")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Undo" parent="CanvasLayer" instance=ExtResource("3_0sr1o")]
-offset_left = 40.0
-offset_top = 35.0
-offset_right = 89.0
-offset_bottom = 66.0
+offset_left = 47.0
+offset_top = 41.0
+offset_right = 559.0
+offset_bottom = 553.0
 
 [node name="Hint" parent="CanvasLayer" instance=ExtResource("3_kelw5")]
-offset_left = 152.0
-offset_top = 37.0
-offset_right = 196.0
-offset_bottom = 61.0
+offset_left = 175.0
+offset_top = 41.0
+offset_right = 687.0
+offset_bottom = 553.0
 
-[node name="QuitMenuButton" type="Button" parent="CanvasLayer"]
+[node name="QuitMenuButton" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -80.0
-offset_top = 42.0
-offset_right = -38.0
-offset_bottom = 73.0
+offset_left = -110.0
+offset_top = 41.0
+offset_right = 402.0
+offset_bottom = 553.0
 grow_horizontal = 0
-text = "Quit"
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("5_bdhmt")
+texture_pressed = ExtResource("5_bdhmt")
+texture_hover = ExtResource("5_bdhmt")
 
 [node name="WinMenu" parent="." instance=ExtResource("2_7h61r")]
 visible = false

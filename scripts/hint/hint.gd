@@ -1,4 +1,4 @@
-class_name Hint extends CheckButton
+class_name Hint extends TextureButton
 
 var grid: Grid: set = _set_grid
 

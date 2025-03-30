@@ -1,4 +1,4 @@
-class_name Undo extends Button
+class_name Undo extends TextureButton
 
 @export var grid: Grid: set = _set_grid
 
