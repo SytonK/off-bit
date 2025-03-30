@@ -36,8 +36,13 @@ folder_colors={
 "res://assets/": "purple",
 "res://scenes/": "orange",
 "res://scenes/UI/": "pink",
-"res://scripts/": "green"
+"res://scripts/": "green",
+"res://theme/": "yellow"
 }
+
+[gui]
+
+theme/custom_font="uid://dqhxmrq0qx5k3"
 
 [input]
 
