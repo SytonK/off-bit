@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c34b4psq5br4g"]
+[gd_scene load_steps=7 format=3 uid="uid://c34b4psq5br4g"]
 
 [ext_resource type="Script" uid="uid://bduq2gvjwcmfs" path="res://scripts/GameManager/game.gd" id="1_sul5r"]
+[ext_resource type="Texture2D" uid="uid://k2nbjj6wb5x0" path="res://assets/backgrounds/game background.jpg" id="2_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://bdmbbe0nwcofr" path="res://scenes/UI/menus/win menu/win_menu.tscn" id="2_7h61r"]
 [ext_resource type="PackedScene" uid="uid://7a5agccxrnmc" path="res://scenes/UI/undo/undo.tscn" id="3_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://d3hmeoeneou1r" path="res://scenes/UI/hint/hint.tscn" id="3_kelw5"]
@@ -8,6 +9,11 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_sul5r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(296, 483)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_5i0tg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dl15kh0veqeuc" path="res://scenes/UI/menus/base mode menu/base_mode_menu.tscn" id="1_3owgy"]
 [ext_resource type="Script" uid="uid://bsk1sjvowwt54" path="res://scripts/UI/menus/main menu/main_menu.gd" id="1_f6swy"]
-[ext_resource type="Texture2D" uid="uid://cbc6q81fku8u" path="res://assets/background.jpg" id="2_oubjp"]
+[ext_resource type="Texture2D" uid="uid://cbc6q81fku8u" path="res://assets/backgrounds/menu background.jpg" id="2_oubjp"]
 [ext_resource type="PackedScene" uid="uid://cybb6v2063up5" path="res://scenes/UI/menus/advanced mode menu/advanced_mode_menu.tscn" id="3_x7x50"]
 
 [node name="MainMenu" type="CanvasLayer"]
