@@ -1,5 +1,8 @@
 class_name Hint extends TextureButton
 
+const HINT_COLOR = Color(0.5, 1, 0.5)
+
+
 var grid: Grid: set = _set_grid
 
 var presses: Array[Array] #Array[Array[int]]
@@ -46,7 +49,7 @@ func _show_hint() -> void:
 	var first_index: Vector2i = current_index
 	
 	if presses[current_index.x][current_index.y] != 0:
-		grid.cells[current_index.x][current_index.y].modulate = Color(0.5, 1, 0.5)
+		grid.cells[current_index.x][current_index.y].modulate = HINT_COLOR
 		return
 	_hide_hint()
 	_next_index()
@@ -58,7 +61,7 @@ func _show_hint() -> void:
 			return
 		pass
 	
-	grid.cells[current_index.x][current_index.y].modulate = Color(0.5, 1, 0.5)
+	grid.cells[current_index.x][current_index.y].modulate = HINT_COLOR
 
 func _hide_hint() -> void:
 	grid.cells[current_index.x][current_index.y].modulate = Color(1, 1, 1)
