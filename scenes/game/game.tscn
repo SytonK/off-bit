@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c34b4psq5br4g"]
+[gd_scene load_steps=6 format=3 uid="uid://c34b4psq5br4g"]
 
 [ext_resource type="Script" uid="uid://bduq2gvjwcmfs" path="res://scripts/GameManager/game.gd" id="1_sul5r"]
 [ext_resource type="PackedScene" uid="uid://bdmbbe0nwcofr" path="res://scenes/UI/menus/win menu/win_menu.tscn" id="2_7h61r"]
 [ext_resource type="PackedScene" uid="uid://7a5agccxrnmc" path="res://scenes/UI/undo/undo.tscn" id="3_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://d3hmeoeneou1r" path="res://scenes/UI/hint/hint.tscn" id="3_kelw5"]
+[ext_resource type="PackedScene" uid="uid://bdn7ldgjmcwyi" path="res://scenes/UI/menus/quit menu/quit_menu.tscn" id="5_lfrn8"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_sul5r")
@@ -17,10 +18,26 @@ offset_right = 89.0
 offset_bottom = 66.0
 
 [node name="Hint" parent="CanvasLayer" instance=ExtResource("3_kelw5")]
-offset_left = 462.0
-offset_top = 35.0
-offset_right = 506.0
-offset_bottom = 59.0
+offset_left = 152.0
+offset_top = 37.0
+offset_right = 196.0
+offset_bottom = 61.0
+
+[node name="QuitMenuButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 42.0
+offset_right = -38.0
+offset_bottom = 73.0
+grow_horizontal = 0
+text = "Quit"
 
 [node name="WinMenu" parent="." instance=ExtResource("2_7h61r")]
 visible = false
+
+[node name="QuitMenu" parent="." instance=ExtResource("5_lfrn8")]
+visible = false
+
+[connection signal="pressed" from="CanvasLayer/QuitMenuButton" to="." method="_on_quit_menu_button_pressed"]

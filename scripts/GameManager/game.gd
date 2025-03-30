@@ -6,6 +6,7 @@ const GRID_CONTAIN_SIZE: Vector2 = Vector2(540 * 0.8, 960 * 0.8)
 @onready var win_menu: CanvasLayer = $WinMenu
 @onready var undo: Undo = $CanvasLayer/Undo
 @onready var hint: Hint = $CanvasLayer/Hint
+@onready var quit_menu: CanvasLayer = $QuitMenu
 
 var grid: Grid
 
@@ -28,3 +29,7 @@ func _init_grid() -> void:
 
 func _on_win() -> void:
 	win_menu.visible = true
+
+
+func _on_quit_menu_button_pressed() -> void:
+	quit_menu.visible = true
