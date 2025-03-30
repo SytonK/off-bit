@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cf0aqcy3npt6s" path="res://scripts/UI/components/IntSelector/int_selector.gd" id="1_uqqtf"]
 
 [node name="IntSelector" type="HBoxContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 99.0
+offset_bottom = 52.0
 script = ExtResource("1_uqqtf")
 
 [node name="ReduceButton" type="Button" parent="."]
@@ -12,7 +12,9 @@ layout_mode = 2
 text = "V"
 
 [node name="IntInput" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 alignment = 1
 
 [node name="IncreaseButton" type="Button" parent="."]
