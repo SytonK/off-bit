@@ -64,7 +64,7 @@ func generate_pattern() -> void:
 		for y in height:
 			var rand_amount_of_presses: int = randi_range(0, modulo -1)
 			for i in rand_amount_of_presses:
-				_on_cell_pressed(Vector2i(x,y))
+				cycle_cells(Vector2i(x,y))
 	if num_of_on_bits == 0:
 		generate_pattern()
 
