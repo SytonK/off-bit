@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://ewise6t70t37"]
+
+[ext_resource type="Script" uid="uid://ced3frsxcwac4" path="res://scripts/tutorials/advanced tutorial/advanced_part_2.gd" id="1_lr8ww"]
+[ext_resource type="Script" uid="uid://dcl4q64bnl4hh" path="res://scripts/grid/grid.gd" id="2_ww86x"]
+
+[node name="AdvancedPart2" type="Node2D"]
+script = ExtResource("1_lr8ww")
+
+[node name="Grid" type="Node2D" parent="."]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("2_ww86x")
+modulo = 3
+
+[node name="Label" type="Label" parent="."]
+offset_left = -151.0
+offset_top = -394.0
+offset_right = 153.0
+offset_bottom = -289.0
+theme_override_font_sizes/font_size = 32
+text = "The goal of the game is
+still the same,
+to set all bits to 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ModuloLabel" type="Label" parent="."]
+offset_left = -147.0
+offset_top = -265.0
+offset_right = -42.0
+offset_bottom = -232.0
+theme_override_font_sizes/font_size = 32
+text = "Modulo: 3"
+
+[node name="WinCanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="WinCanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.216)
+
+[node name="WinMenu" type="VBoxContainer" parent="WinCanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -49.0
+offset_right = 86.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeepPlayingButton" type="Button" parent="WinCanvasLayer/WinMenu"]
+layout_mode = 2
+text = "Keep playing"
+
+[node name="MainMenuButton" type="Button" parent="WinCanvasLayer/WinMenu"]
+layout_mode = 2
+text = "go to main menu"
+
+[connection signal="pressed" from="WinCanvasLayer/WinMenu/KeepPlayingButton" to="." method="_on_keep_playing_button_pressed"]
+[connection signal="pressed" from="WinCanvasLayer/WinMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

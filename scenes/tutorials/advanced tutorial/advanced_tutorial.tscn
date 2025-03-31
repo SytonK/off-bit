@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcp8belfxsehx"]
+
+[ext_resource type="Script" uid="uid://m81fbiug1fdu" path="res://scripts/tutorials/base tutorial/base_tutorial.gd" id="1_42rp2"]
+[ext_resource type="Texture2D" uid="uid://k2nbjj6wb5x0" path="res://assets/backgrounds/game background.jpg" id="2_avc76"]
+[ext_resource type="PackedScene" uid="uid://ctpgwfd4b33a5" path="res://scenes/UI/part selector/part_selector.tscn" id="3_466nc"]
+[ext_resource type="Texture2D" uid="uid://b78keiyqygu62" path="res://assets/icons/x-icon.png" id="4_x7uq4"]
+[ext_resource type="PackedScene" uid="uid://bamre3i4orqf8" path="res://scenes/tutorials/advanced tutorial/parts/advanced_part_1.tscn" id="5_odi13"]
+[ext_resource type="PackedScene" uid="uid://ewise6t70t37" path="res://scenes/tutorials/advanced tutorial/parts/advanced_part_2.tscn" id="6_ft8dt"]
+
+[node name="AdvancedTutorial" type="Node2D"]
+script = ExtResource("1_42rp2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.75)
+position = Vector2(296, 483)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_avc76")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 156.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+
+[node name="PartSelector" parent="CanvasLayer/MarginContainer" node_paths=PackedStringArray("parts") instance=ExtResource("3_466nc")]
+layout_mode = 2
+parts = [NodePath("../../../AdvancedPart1"), NodePath("../../../AdvancedPart2")]
+
+[node name="QuitButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -76.0
+offset_top = 21.0
+offset_right = -20.0
+offset_bottom = 77.0
+grow_horizontal = 0
+icon = ExtResource("4_x7uq4")
+
+[node name="AdvancedPart1" parent="." instance=ExtResource("5_odi13")]
+position = Vector2(272, 680)
+
+[node name="AdvancedPart2" parent="." instance=ExtResource("6_ft8dt")]
+position = Vector2(267, 678)
+
+[connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_quit_button_pressed"]

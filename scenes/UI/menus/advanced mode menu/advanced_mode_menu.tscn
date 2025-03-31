@@ -77,4 +77,5 @@ text = "Modulo:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="VBoxContainer/ToturialButton" to="." method="_on_toturial_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bamre3i4orqf8"]
+
+[ext_resource type="Script" uid="uid://g2kj0ae2vft" path="res://scripts/tutorials/advanced tutorial/advanced_part_1.gd" id="1_0kb7l"]
+[ext_resource type="Script" uid="uid://dcl4q64bnl4hh" path="res://scripts/grid/grid.gd" id="1_d2bmi"]
+
+[node name="AdvancedPart1" type="Node2D"]
+script = ExtResource("1_0kb7l")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -189.0
+offset_top = -455.0
+offset_right = 189.0
+offset_bottom = -242.0
+theme_override_font_sizes/font_size = 32
+text = "On advanced mode you choose
+a monulo. a number betwee 2 to 10
+
+pressing a bit will cycle it down
+from the modulo to 0, and loop
+back once belowe 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ModuloLabel" type="Label" parent="."]
+offset_left = -182.0
+offset_top = -215.0
+offset_right = -64.0
+offset_bottom = -182.0
+theme_override_font_sizes/font_size = 32
+text = "Modulo = 3"
+
+[node name="Grid" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_d2bmi")
+height = 1
+width = 1
+modulo = 3
