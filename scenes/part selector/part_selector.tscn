@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctpgwfd4b33a5"]
+
+[ext_resource type="Script" uid="uid://bkxfi7tdynr7x" path="res://scripts/part selector/part_selector.gd" id="1_a6tfl"]
+[ext_resource type="Texture2D" uid="uid://ducyjimvvkt0v" path="res://assets/icons/back-icon.png" id="2_d015d"]
+[ext_resource type="Texture2D" uid="uid://cktae2e72q2c2" path="res://assets/icons/next-icon.PNG" id="3_k8dyt"]
+
+[node name="PartSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_a6tfl")
+
+[node name="BackButton" type="Button" parent="."]
+offset_right = 56.0
+offset_bottom = 56.0
+icon = ExtResource("2_d015d")
+
+[node name="NextButton" type="Button" parent="."]
+offset_left = 484.0
+offset_right = 540.0
+offset_bottom = 56.0
+icon = ExtResource("3_k8dyt")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
