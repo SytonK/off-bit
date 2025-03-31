@@ -1,14 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://cm3lpl4djmllv"]
+[gd_scene load_steps=8 format=3 uid="uid://cm3lpl4djmllv"]
 
 [ext_resource type="Script" uid="uid://m81fbiug1fdu" path="res://scripts/tutorials/base tutorial/base_tutorial.gd" id="1_p7hoq"]
 [ext_resource type="PackedScene" uid="uid://ctpgwfd4b33a5" path="res://scenes/UI/part selector/part_selector.tscn" id="1_q2l0b"]
 [ext_resource type="Texture2D" uid="uid://b78keiyqygu62" path="res://assets/icons/x-icon.png" id="1_qjkwa"]
+[ext_resource type="Texture2D" uid="uid://k2nbjj6wb5x0" path="res://assets/backgrounds/game background.jpg" id="2_qy788"]
 [ext_resource type="PackedScene" uid="uid://88b7sybxdwmb" path="res://scenes/tutorials/base tutorial/parts/base_part_1.tscn" id="4_uctne"]
 [ext_resource type="PackedScene" uid="uid://2ki2w2dsnm8l" path="res://scenes/tutorials/base tutorial/parts/base_part_2.tscn" id="5_as6he"]
 [ext_resource type="PackedScene" uid="uid://dhjxgenhhll82" path="res://scenes/tutorials/base tutorial/parts/base_part_3.tscn" id="6_as6he"]
 
 [node name="BaseTutorial" type="Node2D"]
 script = ExtResource("1_p7hoq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.75)
+position = Vector2(296, 483)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_qy788")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
