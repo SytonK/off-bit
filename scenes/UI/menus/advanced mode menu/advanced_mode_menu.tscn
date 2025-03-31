@@ -29,13 +29,16 @@ text = "Toturial"
 
 [node name="WidthSelector" parent="VBoxContainer" instance=ExtResource("1_cs7l3")]
 layout_mode = 2
+init_value = 5
 
 [node name="HeightSelector" parent="VBoxContainer" instance=ExtResource("1_cs7l3")]
 layout_mode = 2
+init_value = 5
 
 [node name="ModuloSelector" parent="VBoxContainer" instance=ExtResource("1_cs7l3")]
 layout_mode = 2
 min_value = 2
+init_value = 3
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2

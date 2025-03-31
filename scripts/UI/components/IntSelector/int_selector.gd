@@ -2,6 +2,7 @@ class_name IntSelector extends HBoxContainer
 
 @export var min_value: int = 1
 @export var max_value: int = 10
+@export var init_value: int = min_value
 
 @onready var int_input: LineEdit = $IntInput
 @onready var reduce_button: Button = $ReduceButton
@@ -10,7 +11,7 @@ class_name IntSelector extends HBoxContainer
 var value: int : set = _set_value
 
 func _ready() -> void:
-	value = min_value
+	value = init_value
 
 func _set_value(new_value: int) -> void:
 	value = clampi(new_value, min_value, max_value)
