@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcl4q64bnl4hh" path="res://scripts/grid/grid.gd" id="1_vys4x"]
 
-[node name="BasePart1" type="Node2D"]
+[node name="BasePart2" type="Node2D"]
 
 [node name="Grid" type="Node2D" parent="."]
 scale = Vector2(0.25, 0.25)

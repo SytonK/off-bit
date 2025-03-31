@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dcl4q64bnl4hh" path="res://scripts/grid/grid.gd" id="1_jog73"]
 [ext_resource type="Script" uid="uid://yf5rkox40wga" path="res://scripts/tutorials/base tutorial/parts/base_part_3.gd" id="1_mo1rr"]
 
-[node name="BasePart1" type="Node2D"]
+[node name="BasePart3" type="Node2D"]
 script = ExtResource("1_mo1rr")
 
 [node name="Grid" type="Node2D" parent="."]
