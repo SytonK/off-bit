@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhjxgenhhll82"]
+
+[ext_resource type="Script" uid="uid://dcl4q64bnl4hh" path="res://scripts/grid/grid.gd" id="1_jog73"]
+[ext_resource type="Script" uid="uid://yf5rkox40wga" path="res://scripts/tutorials/base tutorial/parts/base_part_3.gd" id="1_mo1rr"]
+
+[node name="BasePart1" type="Node2D"]
+script = ExtResource("1_mo1rr")
+
+[node name="Grid" type="Node2D" parent="."]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_jog73")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -156.0
+offset_top = -270.0
+offset_right = 148.0
+offset_bottom = -201.0
+theme_override_font_sizes/font_size = 32
+text = "The goal of the game is
+to set all bits to 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinCanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="WinCanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.216)
+
+[node name="WinMenu" type="VBoxContainer" parent="WinCanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -49.0
+offset_right = 86.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeepPlayingButton" type="Button" parent="WinCanvasLayer/WinMenu"]
+layout_mode = 2
+text = "Keep playing"
+
+[node name="MainMenuButton" type="Button" parent="WinCanvasLayer/WinMenu"]
+layout_mode = 2
+text = "go to main menu"
+
+[connection signal="pressed" from="WinCanvasLayer/WinMenu/KeepPlayingButton" to="." method="_on_keep_playing_button_pressed"]
+[connection signal="pressed" from="WinCanvasLayer/WinMenu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

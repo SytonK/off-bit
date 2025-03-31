@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://88b7sybxdwmb"]
+
+[ext_resource type="Script" uid="uid://dcl4q64bnl4hh" path="res://scripts/grid/grid.gd" id="1_5rltt"]
+
+[node name="BasePart1" type="Node2D"]
+
+[node name="Grid" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_5rltt")
+height = 1
+width = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = -141.0
+offset_top = -270.0
+offset_right = 163.0
+offset_bottom = -201.0
+theme_override_font_sizes/font_size = 32
+text = "pressing on a bit toggles
+its value from 0 to 1"
+horizontal_alignment = 1
+vertical_alignment = 1

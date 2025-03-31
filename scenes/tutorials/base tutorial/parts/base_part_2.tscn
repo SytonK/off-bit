@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://2ki2w2dsnm8l"]
+
+[ext_resource type="Script" uid="uid://dcl4q64bnl4hh" path="res://scripts/grid/grid.gd" id="1_vys4x"]
+
+[node name="BasePart1" type="Node2D"]
+
+[node name="Grid" type="Node2D" parent="."]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_vys4x")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -156.0
+offset_top = -270.0
+offset_right = 148.0
+offset_bottom = -201.0
+theme_override_font_sizes/font_size = 32
+text = "This also affects all
+of the neighboring bits"
+horizontal_alignment = 1
+vertical_alignment = 1
