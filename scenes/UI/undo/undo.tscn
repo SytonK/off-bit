@@ -3,13 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://ca0k8ohoo3wku" path="res://assets/icons/undo-icon.png" id="1_1oujp"]
 [ext_resource type="Script" uid="uid://qdrw30pmdtd0" path="res://scripts/UI/menus/undo/undo.gd" id="1_bafuy"]
 
-[node name="Undo" type="TextureButton"]
+[node name="Undo" type="Button"]
 offset_right = 59.0
-offset_bottom = 41.0
+offset_bottom = 48.0
 scale = Vector2(0.1, 0.1)
-texture_normal = ExtResource("1_1oujp")
-texture_pressed = ExtResource("1_1oujp")
-texture_hover = ExtResource("1_1oujp")
+icon = ExtResource("1_1oujp")
 script = ExtResource("1_bafuy")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

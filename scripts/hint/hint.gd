@@ -1,4 +1,4 @@
-class_name Hint extends TextureButton
+class_name Hint extends Button
 
 const HINT_COLOR = Color(0.5, 1, 0.5)
 

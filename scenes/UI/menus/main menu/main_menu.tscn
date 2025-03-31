@@ -81,7 +81,7 @@ layout_mode = 1
 offset_top = -105.0
 offset_bottom = 197.0
 
-[node name="BackButton" type="TextureButton" parent="."]
+[node name="BackButton" type="Button" parent="."]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -94,9 +94,7 @@ offset_right = 191.0
 offset_bottom = -101.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("5_25xyw")
-texture_pressed = ExtResource("5_25xyw")
-texture_hover = ExtResource("5_25xyw")
+icon = ExtResource("5_25xyw")
 
 [connection signal="pressed" from="MenuSwapper/ModeSelector/BaseModeButton" to="." method="_on_base_mode_button_pressed"]
 [connection signal="pressed" from="MenuSwapper/ModeSelector/AdvancedModeButton" to="." method="_on_advanced_mode_button_pressed"]
