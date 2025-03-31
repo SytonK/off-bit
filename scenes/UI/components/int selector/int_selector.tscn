@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://yp5jb0ky331u"]
+[gd_scene load_steps=4 format=3 uid="uid://yp5jb0ky331u"]
 
 [ext_resource type="Script" uid="uid://cf0aqcy3npt6s" path="res://scripts/UI/components/IntSelector/int_selector.gd" id="1_uqqtf"]
+[ext_resource type="Texture2D" uid="uid://g4nmsqw3gx3e" path="res://assets/icons/plus-icon.png" id="2_lxuyw"]
+[ext_resource type="Texture2D" uid="uid://cb5b4tvbrxeex" path="res://assets/icons/minus-icon.png" id="2_q7876"]
 
 [node name="IntSelector" type="HBoxContainer"]
 offset_right = 99.0
@@ -9,17 +11,17 @@ script = ExtResource("1_uqqtf")
 
 [node name="ReduceButton" type="Button" parent="."]
 layout_mode = 2
-text = "V"
+icon = ExtResource("2_q7876")
 
 [node name="IntInput" type="LineEdit" parent="."]
-custom_minimum_size = Vector2(75, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 alignment = 1
 
 [node name="IncreaseButton" type="Button" parent="."]
 layout_mode = 2
-text = "^"
+icon = ExtResource("2_lxuyw")
 
 [connection signal="pressed" from="ReduceButton" to="." method="_on_reduce_button_pressed"]
 [connection signal="text_changed" from="IntInput" to="." method="_on_int_input_text_changed"]

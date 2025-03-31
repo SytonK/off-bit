@@ -1,8 +1,8 @@
 extends Control
 
-@onready var width_selector: IntSelector = $WidthSelector
-@onready var height_selector: IntSelector = $HeightSelector
-@onready var modulo_selector: IntSelector = $ModuloSelector
+@onready var width_selector: IntSelector = $VBoxContainer/WidthSelector
+@onready var height_selector: IntSelector = $VBoxContainer/HeightSelector
+@onready var modulo_selector: IntSelector = $VBoxContainer/ModuloSelector
 
 
 func _on_start_button_pressed() -> void:

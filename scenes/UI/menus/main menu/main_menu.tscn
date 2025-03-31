@@ -78,8 +78,10 @@ offset_bottom = 50.5
 [node name="AdvancedModeMenu" parent="MenuSwapper" instance=ExtResource("3_x7x50")]
 visible = false
 layout_mode = 1
-offset_top = -105.0
-offset_bottom = 197.0
+offset_left = -130.0
+offset_top = -45.0
+offset_right = 140.0
+offset_bottom = 257.0
 
 [node name="BackButton" type="Button" parent="."]
 visible = false
