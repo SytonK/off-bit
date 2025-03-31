@@ -8,11 +8,16 @@ class_name PartSelector extends Control
 var current_part: int = 0: set = _set_curr_part
 
 func _ready() -> void:
+	if parts.size() == 0:
+		back_button.disabled = true
+		next_button.disabled = true
+	
 	for i in parts.size():
 		if i != 0:
 			parts[i].visible = false
 
 func _set_curr_part(new_val: int) -> void:
+	assert(parts.size() != 0)
 	back_button.disabled = new_val == 0
 	next_button.disabled = new_val == parts.size() - 1
 	

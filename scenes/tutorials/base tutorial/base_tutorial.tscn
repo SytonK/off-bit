@@ -1,3 +1,49 @@
-[gd_scene format=3 uid="uid://cm3lpl4djmllv"]
+[gd_scene load_steps=5 format=3 uid="uid://cm3lpl4djmllv"]
+
+[ext_resource type="Script" uid="uid://m81fbiug1fdu" path="res://scripts/tutorials/base tutorial/base_tutorial.gd" id="1_p7hoq"]
+[ext_resource type="PackedScene" uid="uid://ctpgwfd4b33a5" path="res://scenes/UI/part selector/part_selector.tscn" id="1_q2l0b"]
+[ext_resource type="Texture2D" uid="uid://b78keiyqygu62" path="res://assets/icons/x-icon.png" id="1_qjkwa"]
+[ext_resource type="Texture2D" uid="uid://bvmwu50mipa0j" path="res://icon.svg" id="3_3uuh1"]
 
 [node name="BaseTutorial" type="Node2D"]
+script = ExtResource("1_p7hoq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 156.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+
+[node name="PartSelector" parent="CanvasLayer/MarginContainer" node_paths=PackedStringArray("parts") instance=ExtResource("1_q2l0b")]
+layout_mode = 2
+parts = [NodePath("../../../Icon"), NodePath("../../../Icon2"), NodePath("../../../Icon3")]
+
+[node name="QuitButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -87.0
+offset_top = 45.0
+offset_right = -31.0
+offset_bottom = 101.0
+grow_horizontal = 0
+icon = ExtResource("1_qjkwa")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(335, 365)
+texture = ExtResource("3_3uuh1")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(197, 456)
+texture = ExtResource("3_3uuh1")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(343, 555)
+texture = ExtResource("3_3uuh1")
+
+[connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_quit_button_pressed"]
