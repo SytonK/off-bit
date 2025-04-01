@@ -1,4 +1,4 @@
-class_name Cell extends Node2D
+class_name Cell extends Control
 
 const SIZE: float = 512
 
@@ -16,9 +16,5 @@ func set_value(new_value: int) -> void:
 	value = posmod(new_value, modulo)
 	label.text = str(value)
 
-
-func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event.is_action_pressed("pressed"):
-		cell_pressed.emit(index)
-	elif event is InputEventScreenTouch and event.is_pressed():
-		cell_pressed.emit(index)
+func _on_texture_button_pressed() -> void:
+	cell_pressed.emit(index)
